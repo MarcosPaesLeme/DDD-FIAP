@@ -11,7 +11,7 @@ Identificar os subdomínios do **Pede Ai**, classificá-los (Core, Supporting, G
 ---
 
 ## 2. Objetivo Principal do Pede Ai
-O objetivo principal e resolver o problema de ineficiência do atendimento, acarretando em perda de faturamente e insatisfação dos clientes e estabelecimentos.
+O objetivo principal é resolver o problema de ineficiência do atendimento, acarretando em perda de faturamente e insatisfação dos clientes e estabelecimentos.
 
 ---
 
@@ -20,11 +20,11 @@ Liste os subdomínios do sistema e classifique-os como **Core Domain**, **Suppor
 
 | **Subdomínio**              | **Descrição**                                                                                      | **Tipo**         |
 |-----------------------------|--------------------------------------------------------------------------------------------------|------------------|
-| Gestão de Pedidos    | Gerencia o pedido realizado pelo cliente para o estabelecimento                   | Core Domain      |
-| Cadastro de Usuários   | Gerencia o cadastro dos clientes e responsaveis do estabelecimento.                                | Supporting       |
-| Catalogo de pratos (menu)   |   Gerencia e lista os pratos que podem ser pedidos pelos clientes                              | Supporting       |
-| Gestão de estoque   |   Gerencia o estoque do estabelecimento (Quantidade de produtos, etc)                              | Supporting       |
-| Pagamentos             | Processa pagamentos e repassa valores para médicos.                                             | Generic          |
+| Gestão de Pedidos    | Gerencia os pedidos realizados pelos clientes                   | Core Domain      |
+| Cadastro de Usuários   | Gerencia o cadastro dos clientes e responsáveis do estabelecimento.                                | Supporting       |
+| Catálogo de pratos (menu)   |   Gerencia e lista os pratos que podem ser pedidos pelos clientes                              | Supporting       |
+| Gestão de estoque   |   Gerencia o estoque do estabelecimento (quantidade de produtos, variedade de produtos, etc)                              | Supporting       |
+| Pagamentos             | Processa pagamentos e repassa valores para os estabelecimentos.                                             | Generic          |
 | Autenticação de Usuários    | Gerencia login, permissões e segurança de acesso.                                              | Generic          |
 
 ---
