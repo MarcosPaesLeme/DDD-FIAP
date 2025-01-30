@@ -11,7 +11,7 @@ Identificar os subdomínios do **Pede Ai**, classificá-los (Core, Supporting, G
 ---
 
 ## 2. Objetivo Principal do Pede Ai
-O objetivo principal e resolver o problema de ineficiencia do atendimento, acarretando em perda de faturamente e insatisfacao dos clientes estabelicimentos
+O objetivo principal e resolver o problema de ineficiência do atendimento, acarretando em perda de faturamente e insatisfação dos clientes e estabelecimentos.
 
 ---
 
