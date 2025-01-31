@@ -68,9 +68,14 @@ Liste os termos principais da Linguagem Ubíqua do projeto. Explique brevemente 
 
 | **Termo**     | **Descrição**                                |
 | ------------- | -------------------------------------------- |
-| Ex.: Consulta | Sessão médica entre paciente e médico.       |
-| Ex.: Paciente | Usuário que agenda e realiza consultas.      |
-| Ex.: Receita  | Prescrição médica gerada durante a consulta. |
+| Pedidos | Um prato que e solicitando pelo usuario ao estabelecimento       |
+| Estabelecimento |  Empresa responsavel para fazer o prato     |
+| Catálogo de pratos (menu)  | Lista dos pratos que o estabelecimento fornece |
+| Pagamento  | Transação financeira realizada pelo cliente para pagaar a conta do estabelecimento  |
+| Estoque     | Produtos necessarios para a produção do prato | 
+| Clients | Usuario que realiza pedidos
+| Estabelecimentos | Usuario que realiza/prepara os pratos
+ 
 
 ---
 
