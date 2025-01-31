@@ -56,8 +56,18 @@ Explique como os bounded contexts vão se comunicar. Use os padrões de comunica
 - **APIs (síncrono):** Ex.: O Contexto de Pagamentos consulta informações de preços no Contexto de Consultas.
 
 | **De (Origem)**                       | **Para (Destino)**             | **Forma de Comunicação** | **Exemplo de Evento/Chamada**  |
-| ------------------------------------- | ------------------------------ | ------------------------ | ------------------------------ |
-| Contexto de Catálogo de Pratos (menu) | Contexto Gestão de Pedidos     | API                      | Obtem lista de pratos          |
+| **De (Origem)**                       | **Para (Destino)**             | **Forma de Comunicação** | **Exemplo de Evento/Chamada**                           |
+| ------------------------------------- | ------------------------------ | ------------------------ | ------------------------------------------------------- |
+| Contexto Gestão de Pedidos           | Contexto de Catálogo de Pratos | API                      | Obter lista de pratos disponíveis no cardápio           |
+| Contexto Gestão de Pedidos           | Contexto de Pagamentos         | API                      | Enviar pedido para processamento de pagamento           |
+| Contexto de Catálogo de Pratos       | Contexto de Gestão de Estoque  | API                      | Verificar disponibilidade de ingredientes para prato    |
+| Contexto de Gestão de Estoque        | Contexto de Gestão de Pedidos  | API                      | Atualizar estoque após o pedido ser confirmado           |
+| Contexto de Pagamentos               | Contexto de Gestão de Pedidos  | API                      | Notificar sobre o status do pagamento (confirmado/falhou) |
+| Contexto de Pagamentos               | Contexto de Gestão de Usuários | API                      | Enviar dados do cliente para validação de pagamento      |
+| Contexto de Autenticação             | Contexto de Gestão de Usuários | API                      | Validar login e permissões do usuário                   |
+| Contexto de Gestão de Usuários       | Contexto de Catálogo de Pratos | API                      | Consultar informações do cliente (preferências, histórico) |
+| Contexto de Gestão de Pedidos        | Contexto de Autenticação       | API                      | Validar dados do usuário ao realizar pedido             |
+| Contexto de Gestão de Pedidos        | Contexto de Pagamentos         | Evento                   | Evento "Pedido Finalizado", que dispara o processo de pagamento |
 | Contexto de Pagamentos                | Contexto de Gestão de Usuários | API                      | Obter dados do cliente         |
 | Contexto Catálogo de Pratos (menu)    | Contexto de Gestão de Estoque  | API                      | Obter ingredientes disponíveis |
 | Contexto de Autenticação              | Contexto de Gestão de Usuário  | API                      | Validar login e permissões     |
