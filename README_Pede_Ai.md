@@ -89,9 +89,12 @@ Para cada tipo de subdomínio, explique a abordagem para implementação:
 
 | **Subdomínio**       | **Estratégia**                      | **Ferramentas ou Serviços (se aplicável)** |
 | -------------------- | ----------------------------------- | ------------------------------------------ |
-| Gestão de Consultas  | Desenvolvimento interno             |                                            |
-| Cadastro de Usuários | Interno com uso de Auth0 para login | Auth0                                      |
-| Pagamentos           | Terceirizar usando API Stripe       | Stripe                                     |
+| Gestão de Pedidos   | Desenvolvimento interno             |                                        |
+| Catálogo de pratos (menu) |  Desenvolvimento interno  |    |
+| Cadastro de Usuários       | Desenvolvimento interno               |                                           |
+| Autenticação de Usuários    | Usar serviço externo                  | Auth0                                     |
+| Pagamentos           | Terceirizar usando API Pagarme       | Pagarme                                     |
+
 
 ---
 
