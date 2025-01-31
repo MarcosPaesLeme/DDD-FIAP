@@ -37,14 +37,14 @@ Liste os subdomínios do sistema e classifique-os como **Core Domain**, **Suppor
 
 Liste e descreva os bounded contexts identificados no projeto. Explique a responsabilidade de cada um.
 
-| **Bounded Context**                   | **Responsabilidade**                                                                 | **Subdomínios Relacionados**                                                |
-| ------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- |
-| Contexto Gestão de Pedidos            | Gerencia todo o processo de pedidos feitos até a entrega do pedido para o cliente    | Gestão de Pedidos, Catálogo de pratos (menu), Pagamentos |
-| Contexto de Gestão de Usuários      | Centraliza o cadastro de clientes e estabelecimentos, armazenado informações basicas | Gestão de Usuários                                                        |
-| Contexto de Catálogo de Pratos (menu) | Processa cobranças de pedidos feitos pelos clientes                                  | Gestão de estoque, Catálogo de pratos (menu), Gestão de Pedidos                                |
-| Contexto de Gestão de estoque         | Gerencia o processo das quantidades de produtos, variedade de produtos, etc          | Gestão de estoque                                                           |
-| Contexto de Pagamentos                | Processa cobranças dos pedidos e repasses para os estabelecimentos                   | Pagamentos                                                                  |
-| Contexto de Autenticação              | Controla login, cadastro e permissões de usuários (estabelecimentos e clientes).     | Autenticação de Usuários                                                    |
+| **Bounded Context**                   | **Responsabilidade**                                                                 | **Subdomínios Relacionados**                                    |
+| ------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
+| Contexto Gestão de Pedidos            | Gerencia todo o processo de pedidos feitos até a entrega do pedido para o cliente    | Gestão de Pedidos, Catálogo de pratos (menu), Pagamentos        |
+| Contexto de Gestão de Usuários        | Centraliza o cadastro de clientes e estabelecimentos, armazenado informações basicas | Gestão de Usuários                                              |
+| Contexto de Catálogo de Pratos (menu) | Processa cobranças de pedidos feitos pelos clientes                                  | Gestão de estoque, Catálogo de pratos (menu), Gestão de Pedidos |
+| Contexto de Gestão de estoque         | Gerencia o processo das quantidades de produtos, variedade de produtos, etc          | Gestão de estoque                                               |
+| Contexto de Pagamentos                | Processa cobranças dos pedidos e repasses para os estabelecimentos                   | Pagamentos                                                      |
+| Contexto de Autenticação              | Controla login, cadastro e permissões de usuários (estabelecimentos e clientes).     | Autenticação de Usuários                                        |
 
 ---
 
@@ -55,11 +55,12 @@ Explique como os bounded contexts vão se comunicar. Use os padrões de comunica
 - **Mensageria/Eventos (desacoplado):** Ex.: O Contexto de Consultas emite um evento "Consulta Finalizada", consumido pelo Contexto de Pagamentos.
 - **APIs (síncrono):** Ex.: O Contexto de Pagamentos consulta informações de preços no Contexto de Consultas.
 
-| **De (Origem)**            | **Para (Destino)**                    | **Forma de Comunicação** | **Exemplo de Evento/Chamada**            |
-| -------------------------- | ------------------------------------- | ------------------------ | ---------------------------------------- |
-| Contexto de Catálogo de Pratos (menu) | Contexto Gestão de Pedidos | API                      | "Lista de pratos"                        |
-| Contexto Catálogo de Pratos (menu) | Contexto de Gestão de Estoque                 | API                      | Obter ingredientes disponíveis           |
-| Contexto Gestão de Pedidos | Contexto de Gestão de Estoque                 | API                      | Obter ingredientes disponíveis           |
+| **De (Origem)**                       | **Para (Destino)**             | **Forma de Comunicação** | **Exemplo de Evento/Chamada**  |
+| ------------------------------------- | ------------------------------ | ------------------------ | ------------------------------ |
+| Contexto de Catálogo de Pratos (menu) | Contexto Gestão de Pedidos     | API                      | Obtem lista de pratos          |
+| Contexto de Pagamentos                | Contexto de Gestão de Usuários | API                      | Obter dados do cliente         |
+| Contexto Catálogo de Pratos (menu)    | Contexto de Gestão de Estoque  | API                      | Obter ingredientes disponíveis |
+| Contexto de Autenticação              | Contexto de Gestão de Usuário  | API                      | Validar login e permissões     |
 
 ---
 
@@ -67,16 +68,15 @@ Explique como os bounded contexts vão se comunicar. Use os padrões de comunica
 
 Liste os termos principais da Linguagem Ubíqua do projeto. Explique brevemente cada termo.
 
-| **Termo**     | **Descrição**                                |
-| ------------- | -------------------------------------------- |
-| Pedidos | Um prato que e solicitando pelo usuario ao estabelecimento       |
-| Estabelecimento |  Empresa responsavel para fazer o prato     |
-| Catálogo de pratos (menu)  | Lista dos pratos que o estabelecimento fornece |
-| Pagamento  | Transação financeira realizada pelo cliente para pagaar a conta do estabelecimento  |
-| Estoque     | Produtos necessarios para a produção do prato | 
-| Clients | Usuario que realiza pedidos
-| Estabelecimentos | Usuario que realiza/prepara os pratos
- 
+| **Termo**                 | **Descrição**                                                                      |
+| ------------------------- | ---------------------------------------------------------------------------------- |
+| Pedidos                   | Um prato que e solicitando pelo usuario ao estabelecimento                         |
+| Estabelecimento           | Empresa responsavel para fazer o prato                                             |
+| Catálogo de pratos (menu) | Lista dos pratos que o estabelecimento fornece                                     |
+| Pagamento                 | Transação financeira realizada pelo cliente para pagaar a conta do estabelecimento |
+| Estoque                   | Produtos necessarios para a produção do prato                                      |
+| Clients                   | Usuario que realiza pedidos                                                        |
+| Estabelecimentos          | Usuario que realiza/prepara os pratos                                              |
 
 ---
 
@@ -88,14 +88,13 @@ Para cada tipo de subdomínio, explique a abordagem para implementação:
 - **Supporting Subdomain:** Desenvolver internamente ou parcialmente terceirizar.
 - **Generic Subdomain:** Usar ferramentas ou serviços de mercado.
 
-| **Subdomínio**       | **Estratégia**                      | **Ferramentas ou Serviços (se aplicável)** |
-| -------------------- | ----------------------------------- | ------------------------------------------ |
-| Gestão de Pedidos   | Desenvolvimento interno             |                                        |
-| Catálogo de pratos (menu) |  Desenvolvimento interno  |    |
-| Gestão de Usuários       | Desenvolvimento interno               |                                           |
-| Autenticação de Usuários    | Usar serviço externo                  | Auth0                                     |
-| Pagamentos           | Terceirizar usando API Pagarme       | Pagarme                                     |
-
+| **Subdomínio**            | **Estratégia**                 | **Ferramentas ou Serviços (se aplicável)** |
+| ------------------------- | ------------------------------ | ------------------------------------------ |
+| Gestão de Pedidos         | Desenvolvimento interno        |                                            |
+| Catálogo de pratos (menu) | Desenvolvimento interno        |                                            |
+| Gestão de Usuários        | Desenvolvimento interno        |                                            |
+| Autenticação de Usuários  | Usar serviço externo           | Auth0                                      |
+| Pagamentos                | Terceirizar usando API Pagarme | Pagarme                                    |
 
 ---
 
