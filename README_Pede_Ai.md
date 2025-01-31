@@ -25,8 +25,8 @@ Liste os subdomínios do sistema e classifique-os como **Core Domain**, **Suppor
 | **Subdomínio**            | **Descrição**                                                                              | **Tipo**    |
 | ------------------------- | ------------------------------------------------------------------------------------------ | ----------- |
 | Gestão de Pedidos         | Gerencia os pedidos realizados pelos clientes                                              | Core Domain |
-| Cadastro de Usuários      | Gerencia o cadastro dos clientes e responsáveis do estabelecimento.                        | Supporting  |
-| Catálogo de pratos (menu) | Gerencia e lista os pratos que podem ser pedidos pelos clientes                            | Supporting  |
+| Gestão de Usuários        | Gerencia o cadastro dos clientes e responsáveis do estabelecimento.                        | Supporting  |
+| Catálogo de Pratos (menu) | Gerencia e lista os pratos que podem ser pedidos pelos clientes                            | Supporting  |
 | Gestão de estoque         | Gerencia o estoque do estabelecimento (quantidade de produtos, variedade de produtos, etc) | Supporting  |
 | Pagamentos                | Processa pagamentos e repassa valores para os estabelecimentos.                            | Generic     |
 | Autenticação de Usuários  | Gerencia login, permissões e segurança de acesso.                                          | Generic     |
@@ -39,9 +39,9 @@ Liste e descreva os bounded contexts identificados no projeto. Explique a respon
 
 | **Bounded Context**                   | **Responsabilidade**                                                                 | **Subdomínios Relacionados**                                                |
 | ------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- |
-| Contexto Gestão de Pedidos            | Gerencia todo o processo de pedidos feitos ate a entrega do pedido para o cliente    | Gestão de Pedidos, Catálogo de pratos (menu), Pagamentos |
-| Contexto de Cadastro de Usuários      | Centraliza o cadastro de clientes e estabelecimentos, armazenado informações basicas | Cadastro de Usuários                                                        |
-| Contexto de Catálogo de pratos (menu) | Processa cobranças de pedidos feitos pelos clientes                                  | Gestão de estoque, Catálogo de pratos (menu)                                |
+| Contexto Gestão de Pedidos            | Gerencia todo o processo de pedidos feitos até a entrega do pedido para o cliente    | Gestão de Pedidos, Catálogo de pratos (menu), Pagamentos |
+| Contexto de Gestão de Usuários      | Centraliza o cadastro de clientes e estabelecimentos, armazenado informações basicas | Gestão de Usuários                                                        |
+| Contexto de Catálogo de Pratos (menu) | Processa cobranças de pedidos feitos pelos clientes                                  | Gestão de estoque, Catálogo de pratos (menu), Gestão de Pedidos                                |
 | Contexto de Gestão de estoque         | Gerencia o processo das quantidades de produtos, variedade de produtos, etc          | Gestão de estoque                                                           |
 | Contexto de Pagamentos                | Processa cobranças dos pedidos e repasses para os estabelecimentos                   | Pagamentos                                                                  |
 | Contexto de Autenticação              | Controla login, cadastro e permissões de usuários (estabelecimentos e clientes).     | Autenticação de Usuários                                                    |
@@ -57,8 +57,9 @@ Explique como os bounded contexts vão se comunicar. Use os padrões de comunica
 
 | **De (Origem)**            | **Para (Destino)**                    | **Forma de Comunicação** | **Exemplo de Evento/Chamada**            |
 | -------------------------- | ------------------------------------- | ------------------------ | ---------------------------------------- |
-| Contexto Gestão de Pedidos | Contexto de Catálogo de pratos (menu) | API                      | "Lista de pratos"                        |
-| Contexto Gestão de Pedidos | Contexto de Consultas                 | API                      | Obter informações de um Paciente pelo ID |
+| Contexto de Catálogo de Pratos (menu) | Contexto Gestão de Pedidos | API                      | "Lista de pratos"                        |
+| Contexto Catálogo de Pratos (menu) | Contexto de Gestão de Estoque                 | API                      | Obter ingredientes disponíveis           |
+| Contexto Gestão de Pedidos | Contexto de Gestão de Estoque                 | API                      | Obter ingredientes disponíveis           |
 
 ---
 
@@ -91,7 +92,7 @@ Para cada tipo de subdomínio, explique a abordagem para implementação:
 | -------------------- | ----------------------------------- | ------------------------------------------ |
 | Gestão de Pedidos   | Desenvolvimento interno             |                                        |
 | Catálogo de pratos (menu) |  Desenvolvimento interno  |    |
-| Cadastro de Usuários       | Desenvolvimento interno               |                                           |
+| Gestão de Usuários       | Desenvolvimento interno               |                                           |
 | Autenticação de Usuários    | Usar serviço externo                  | Auth0                                     |
 | Pagamentos           | Terceirizar usando API Pagarme       | Pagarme                                     |
 
