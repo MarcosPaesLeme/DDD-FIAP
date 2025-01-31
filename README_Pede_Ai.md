@@ -39,7 +39,7 @@ Liste e descreva os bounded contexts identificados no projeto. Explique a respon
 
 | **Bounded Context**                   | **Responsabilidade**                                                                 | **Subdomínios Relacionados**                                                |
 | ------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- |
-| Contexto Gestão de Pedidos            | Gerencia todo o processo de pedidos feitos ate a entrega do pedido para o cliente    | Gestão de Pedidos, Catálogo de pratos (menu), Gestão de estoque, Pagamentos |
+| Contexto Gestão de Pedidos            | Gerencia todo o processo de pedidos feitos ate a entrega do pedido para o cliente    | Gestão de Pedidos, Catálogo de pratos (menu), Pagamentos |
 | Contexto de Cadastro de Usuários      | Centraliza o cadastro de clientes e estabelecimentos, armazenado informações basicas | Cadastro de Usuários                                                        |
 | Contexto de Catálogo de pratos (menu) | Processa cobranças de pedidos feitos pelos clientes                                  | Gestão de estoque, Catálogo de pratos (menu)                                |
 | Contexto de Gestão de estoque         | Gerencia o processo das quantidades de produtos, variedade de produtos, etc          | Gestão de estoque                                                           |
