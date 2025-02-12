@@ -64,6 +64,8 @@ public interface IConsultaRepository
 📌 **Objetivo:**  
 Criar as **3 Entidades, 2 Value Objects, 1 Agregados e 1 Repositórios** do seu projeto.  
 
+Exemplo: [Modelagem DDD repo](https://github.com/ProfThiagoVicco/ModelagemDDD)
+
 - Entidades:
 1. Usuario
 2. Produto
