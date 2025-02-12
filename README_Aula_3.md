@@ -62,7 +62,22 @@ public interface IConsultaRepository
 ## **📝 2️⃣ Atividade Prática: Modelagem do Domínio**
 
 📌 **Objetivo:**  
-Criar as **Entidades, Value Objects, Agregados e Repositórios** do seu projeto.  
+Criar as **3 Entidades, 2 Value Objects, 1 Agregados e 1 Repositórios** do seu projeto.  
+
+- Entidades:
+1. Usuario
+2. Produto
+3. Estoque
+
+- Value Objects:
+1. Endereco/Localizacao
+2. PratoPedido
+
+- Agreggate:
+1. Pedido
+
+- Repository:
+1. Pedido
 
 📌 **Instruções:**  
 1️⃣ **Identifique as Entidades e Value Objects** do seu domínio.  
