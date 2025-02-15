@@ -84,8 +84,10 @@ Exemplo: [Modelagem DDD repo](https://github.com/ProfThiagoVicco/ModelagemDDD)
 📌 **Instruções:**  
 1️⃣ **Identifique as Entidades e Value Objects** do seu domínio.  
 2️⃣ **Defina os Agregados e seu Aggregate Root**.  
-3️⃣ **Implemente um diagrama mostrando as relações entre os elementos**.  
+3️⃣ **Implemente um diagrama mostrando as relações entre os elementos**.
+![Diagrama](./diagrama.png)
 4️⃣ **Crie a interface do repositório para persistência do agregado**.  
+[Modelagem](./modelagem.ts)
 
 📌 **Exemplo de Resposta para Keller’s Health:**  
 
