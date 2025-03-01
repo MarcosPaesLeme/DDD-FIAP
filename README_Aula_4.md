@@ -77,3 +77,11 @@
 ✅ https://medium.com/@jonesroberto/event-storming-guia-b%C3%A1sico-216498f5dd2d
 
 ✅ https://www.linkedin.com/pulse/o-que-%C3%A9-eventstorming-e-como-este-formato-de-workshop-rodrigues/
+
+---
+
+## Entrega
+
+![Diagrama Aula 4](./diagrama_aula_4.png)
+
+https://miro.com/app/board/uXjVIesNoQs=/?share_link_id=96208179386
