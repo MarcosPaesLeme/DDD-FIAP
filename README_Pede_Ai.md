@@ -80,13 +80,12 @@ Liste os termos principais da Linguagem Ubíqua do projeto. Explique brevemente 
 
 | **Termo**                 | **Descrição**                                                                      |
 | ------------------------- | ---------------------------------------------------------------------------------- |
-| Pedidos                   | Um prato que e solicitando pelo usuario ao estabelecimento                         |
-| Estabelecimento           | Empresa responsavel para fazer o prato                                             |
+| Pedidos                   | Um prato que é solicitando pelo usuário ao estabelecimento                         |
+| Estabelecimento           | Empresa responsável por fazer os pratos                                            |
 | Catálogo de pratos (menu) | Lista dos pratos que o estabelecimento fornece                                     |
-| Pagamento                 | Transação financeira realizada pelo cliente para pagaar a conta do estabelecimento |
-| Estoque                   | Produtos necessarios para a produção do prato                                      |
-| Clients                   | Usuario que realiza pedidos                                                        |
-| Estabelecimentos          | Usuario que realiza/prepara os pratos                                              |
+| Pagamento                 | Transação financeira realizada pelo cliente para pagar a conta do estabelecimento  |
+| Estoque                   | Produtos necessários para a produção do prato                                      |
+| Clientes                  | Usuário que realiza pedidos                                                        |
 
 ---
 
