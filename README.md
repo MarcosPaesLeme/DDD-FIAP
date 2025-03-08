@@ -1,4 +1,9 @@
-# Dinâmica: Design Estratégico do Pede Ai
+# Domain Driven Design: Pede Ai
+
+## Alunos
+
+- Lucas Nagaoka | RM: 358426
+- Marcos Paes Leme | RM: 358316
 
 ## Lista de links
 
